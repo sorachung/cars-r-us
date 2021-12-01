@@ -1,4 +1,4 @@
-import { getInteriors } from "./database.js";
+import { getInteriors, setInterior } from "./database.js";
 
 export const Interiors = () => {
   const interiors = getInteriors();
@@ -19,9 +19,10 @@ export const Interiors = () => {
 document.addEventListener("change", (event) => {
   if (event.target.id === "interior") {
     const interiors = getInteriors();
+    const currentId = event.target.value;
     const currentInterior = interiors.find(
-      (interior) => interior.id === parseInt(event.target.value)
+      (interior) => interior.id === parseInt(currentId)
     );
-    window.alert(`you selected ${currentInterior.seatType}.`);
+    setInterior(currentId);
   }
 });

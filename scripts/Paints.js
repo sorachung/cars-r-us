@@ -1,4 +1,4 @@
-import { getPaints } from "./database.js";
+import { getPaints, setPaint } from "./database.js";
 
 export const Paints = () => {
   const paints = getPaints();
@@ -17,9 +17,10 @@ export const Paints = () => {
 document.addEventListener("change", (event) => {
   if (event.target.id === "paint") {
     const paints = getPaints();
+    const currentId = event.target.value;
     const currentPaint = paints.find(
-      (paint) => paint.id === parseInt(event.target.value)
+      (paint) => paint.id === parseInt(currentId)
     );
-    window.alert(`you picked ${currentPaint.color}`);
+    setPaint(currentId);
   }
 });

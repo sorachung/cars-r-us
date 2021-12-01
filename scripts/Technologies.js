@@ -1,4 +1,4 @@
-import { getTechnologies } from "./database.js";
+import { getTechnologies, setTechnology } from "./database.js";
 
 export const Technologies = () => {
   const techs = getTechnologies();
@@ -18,7 +18,8 @@ export const Technologies = () => {
 document.addEventListener("change", (event) => {
   if (event.target.id === "tech") {
     const techs = getTechnologies();
-    const currentTech = techs.find((tech) => tech.id === parseInt(event.target.value))
-    window.alert(`you selected ${currentTech.option} (${currentTech.description})`)
+    const currentId = event.target.value;
+    const currentTech = techs.find((tech) => tech.id === parseInt(currentId));
+    setTechnology(currentId);
   }
-})
+});
