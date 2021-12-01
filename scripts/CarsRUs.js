@@ -2,6 +2,7 @@ import { Technologies } from "./Technologies.js";
 import { Wheels } from "./Wheels.js";
 import { Paints } from "./Paints.js";
 import { Interiors } from "./Interiors.js";
+import { Orders } from "./Orders.js";
 
 export const CarsRUs = () => {
   return `
@@ -25,5 +26,8 @@ export const CarsRUs = () => {
             <button id="orderButton">Place Car Order</button>
       </article>
       
+      <article class="customOrders">
+          ${Orders()}
+      </article>
   `;
 };

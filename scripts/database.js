@@ -92,6 +92,16 @@ const database = {
       price: 0,
     },
   ],
+  customOrders: [
+    {
+      id: 1,
+      paintId: 3,
+      interiorId: 3,
+      techId: 1,
+      wheelId: 2,
+      timestamp: 1614659931693,
+    },
+  ],
 };
 
 export const getPaints = () => {
@@ -108,6 +118,10 @@ export const getTechnologies = () => {
 
 export const getWheels = () => {
   return database.wheels.map((wheel) => ({ ...wheel }));
+};
+
+export const getOrders = () => {
+  return database.customOrders.map((order) => ({ ...order }));
 };
 
 export const getOrderBuilder = () => {
