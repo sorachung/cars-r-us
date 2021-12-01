@@ -143,3 +143,13 @@ export const setTechnology = (id) => {
 export const setWheel = (id) => {
   database.orderBuilder.wheelId = id;
 };
+
+export const addCustomOrder = () => {
+  const newOrder = {...database.orderBuilder};
+  const newId = database.customOrders[database.customOrders.length -1].id + 1
+  newOrder.id = newId;
+  newOrder.timestamp = Date.now();
+  database.customOrders.push(newOrder);
+  database.orderBuilder = {};
+  document.dispatchEvent(new CustomEvent("stateChanged"));
+}
