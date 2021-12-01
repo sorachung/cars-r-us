@@ -102,7 +102,7 @@ export const getInteriors = () => {
 };
 
 export const getTechnologies = () => {
-  return database.technologies.map((techn) => ({ ...tech }));
+  return database.technologies.map((tech) => ({ ...tech }));
 };
 
 export const getWheels = () => {
