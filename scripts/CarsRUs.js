@@ -26,7 +26,7 @@ export const CarsRUs = () => {
             <button id="orderButton">Place Car Order</button>
       </article>
       
-      <article class="customOrders">
+      <article id="orderButton">
           ${Orders()}
       </article>
   `;

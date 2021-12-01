@@ -1,4 +1,4 @@
-import { getOrders } from "./database.js";
+import { getOrders, getOrderBuilder, addCustomOrder } from "./database.js";
 
 export const Orders = () => {
   const orders = getOrders();
@@ -15,3 +15,12 @@ export const Orders = () => {
 
   return htmlString + "</ul>";
 };
+
+document.addEventListener("click", (event) => {
+  if (event.target.id === "orderButton") {
+  const builtOrder = getOrderBuilder();
+  if (Object.keys(builtOrder).length >= 4) {
+    addCustomOrder();
+  }
+  }
+})
