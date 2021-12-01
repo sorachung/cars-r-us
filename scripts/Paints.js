@@ -13,3 +13,13 @@ export const Paints = () => {
   </section>
   `;
 };
+
+document.addEventListener("change", (event) => {
+  if (event.target.id === "paint") {
+    const paints = getPaints();
+    const currentPaint = paints.find(
+      (paint) => paint.id === parseInt(event.target.value)
+    );
+    window.alert(`you picked ${currentPaint.color}`);
+  }
+});

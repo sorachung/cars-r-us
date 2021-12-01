@@ -14,3 +14,11 @@ export const Technologies = () => {
       </select>
   `;
 };
+
+document.addEventListener("change", (event) => {
+  if (event.target.id === "tech") {
+    const techs = getTechnologies();
+    const currentTech = techs.find((tech) => tech.id === parseInt(event.target.value))
+    window.alert(`you selected ${currentTech.option} (${currentTech.description})`)
+  }
+})

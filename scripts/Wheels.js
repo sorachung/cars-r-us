@@ -14,3 +14,13 @@ export const Wheels = () => {
     </select>
   `;
 };
+
+document.addEventListener("change", (event) => {
+  if (event.target.id === "wheels") {
+    const wheels = getWheels();
+    const currentWheel = wheels.find(
+      (wheel) => wheel.id === parseInt(event.target.value)
+    );
+    window.alert(`you selected ${currentWheel.wheelType}.`);
+  }
+});

@@ -9,8 +9,19 @@ export const Interiors = () => {
       ${interiors
         .map(
           (interior) =>
-            `<option value="${interior.id}">${interior.seatType}</option>`)
+            `<option value="${interior.id}">${interior.seatType}</option>`
+        )
         .join("")}
     </select>
   `;
 };
+
+document.addEventListener("change", (event) => {
+  if (event.target.id === "interior") {
+    const interiors = getInteriors();
+    const currentInterior = interiors.find(
+      (interior) => interior.id === parseInt(event.target.value)
+    );
+    window.alert(`you selected ${currentInterior.seatType}.`);
+  }
+});
