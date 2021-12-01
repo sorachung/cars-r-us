@@ -6,17 +6,24 @@ import { Interiors } from "./Interiors.js";
 export const CarsRUs = () => {
   return `
     <h1>Cars-R-Us</h1>
-      <section class="choices__paints options">
-        ${Paints()}
-      </section>
-      <section class="choices__interiors options">
-        ${Interiors()}
-      </section>
-      <section class="choices__wheels options">
-        ${Wheels()}
-      </section>
-      <section class="choices__technologies options">
-        ${Technologies()}
-      </section>
+      <article class="choices">
+        <section class="choices__paints options">
+          ${Paints()}
+        </section>
+        <section class="choices__interiors options">
+          ${Interiors()}
+        </section>
+        <section class="choices__wheels options">
+          ${Wheels()}
+        </section>
+        <section class="choices__technologies options">
+          ${Technologies()}
+        </section>
+      </article>
+
+      <article>
+            <button id="orderButton">Place Car Order</button>
+      </article>
+      
   `;
 };
