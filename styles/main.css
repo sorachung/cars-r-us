@@ -1,1 +1,47 @@
-@import "./details.css";
+body {
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+}
+
+h1 {
+  margin-left: 4rem;
+}
+
+h2 {
+  margin: 0 0 2rem 0;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.options {
+  margin: 1rem 4rem;
+  padding: 2rem;
+  width: 23rem;
+  border: dashed lightblue 2px;
+  background-color: lightyellow;
+  border-radius: 15px;
+}
+
+#orderButton {
+  width: 10rem;
+  margin-left: 4rem;
+  padding: 0.7rem;
+  font-size: large;
+  background-color: teal;
+  color: lightyellow;
+}
+
+.customOrders {
+  margin:  4rem;
+}
+
+.orderItem {
+  list-style-type: none;
+  border: dashed lightblue 2px;
+  background-color: rgb(215, 238, 252);
+  margin: 1rem 0;
+  padding: 1rem;
+  width: 70%
+}

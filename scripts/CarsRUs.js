@@ -6,7 +6,7 @@ import { Orders } from "./Orders.js";
 
 export const CarsRUs = () => {
   return `
-    <h1>Cars-R-Us</h1>
+    <h1>Cars 'R Us: Personal Car Builder</h1>
       <article class="choices">
         <section class="choices__paints options">
           ${Paints()}
@@ -26,7 +26,7 @@ export const CarsRUs = () => {
             <button id="orderButton">Place Car Order</button>
       </article>
       
-      <article id="orderButton">
+      <article class="customOrders">
           ${Orders()}
       </article>
   `;

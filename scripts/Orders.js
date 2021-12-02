@@ -39,7 +39,7 @@ const buildCustomOrder = (order) => {
     currency: "USD",
   });
 
-  return `<li>
+  return `<li class="orderItem">
     ${orderedPaint.color} car with ${orderedWheel.wheelType} wheels, ${orderedInterior.seatType}, and the ${orderedTech.option} for a total cost of ${costString}
   </li>`;
 };
