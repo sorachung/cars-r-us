@@ -10,6 +10,11 @@ h2 {
   margin: 0 0 2rem 0;
 }
 
+ul {
+  list-style-type: none;
+  padding-inline-start: 0.25rem;
+}
+
 .choices {
   display: flex;
   flex-wrap: wrap;
@@ -44,4 +49,12 @@ h2 {
   margin: 1rem 0;
   padding: 1rem;
   width: 70%
+}
+
+.type__list {
+  display: flex;
+}
+
+.type__list li {
+  margin: 1rem 1rem 0;
 }
