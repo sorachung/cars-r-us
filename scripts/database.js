@@ -92,6 +92,12 @@ const database = {
       price: 0,
     },
   ],
+  types: [
+    {id: 1, name: "Car", priceMult: 1},
+    {id: 2, name: "SUV", priceMult: 1.5},
+    {id: 3, name: "Truck", priceMult: 2.25},
+
+  ],
   customOrders: [
     {
       id: 1,
@@ -124,6 +130,10 @@ export const getOrders = () => {
   return database.customOrders.map((order) => ({ ...order }));
 };
 
+export const getTypes = () => {
+  return database.types.map((type) => ({ ...type }))
+}
+
 export const getOrderBuilder = () => {
   return { ...database.orderBuilder };
 };
@@ -142,6 +152,10 @@ export const setTechnology = (id) => {
 
 export const setWheel = (id) => {
   database.orderBuilder.wheelId = id;
+};
+
+export const setType = (id) => {
+  database.orderBuilder.typeId = id;
 };
 
 export const addCustomOrder = () => {
