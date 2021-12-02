@@ -3,6 +3,7 @@ import { Wheels } from "./Wheels.js";
 import { Paints } from "./Paints.js";
 import { Interiors } from "./Interiors.js";
 import { Orders } from "./Orders.js";
+import { VehicleTypes } from "./VehicleTypes.js";
 
 export const CarsRUs = () => {
   return `
@@ -20,6 +21,10 @@ export const CarsRUs = () => {
         <section class="choices__technologies options">
           ${Technologies()}
         </section>
+      </article>
+
+      <article class="type-choices">
+            ${VehicleTypes()}
       </article>
 
       <article>

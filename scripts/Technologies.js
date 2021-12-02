@@ -17,9 +17,7 @@ export const Technologies = () => {
 
 document.addEventListener("change", (event) => {
   if (event.target.id === "tech") {
-    const techs = getTechnologies();
     const currentId = event.target.value;
-    const currentTech = techs.find((tech) => tech.id === parseInt(currentId));
-    setTechnology(currentId);
+    setTechnology(parseInt(currentId));
   }
 });
