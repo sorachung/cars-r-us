@@ -93,10 +93,9 @@ const database = {
     },
   ],
   types: [
-    {id: 1, name: "Car", priceMult: 1},
-    {id: 2, name: "SUV", priceMult: 1.5},
-    {id: 3, name: "Truck", priceMult: 2.25},
-
+    { id: 1, name: "Car", priceMult: 1 },
+    { id: 2, name: "SUV", priceMult: 1.5 },
+    { id: 3, name: "Truck", priceMult: 2.25 },
   ],
   customOrders: [
     {
@@ -105,6 +104,7 @@ const database = {
       interiorId: 3,
       techId: 1,
       wheelId: 2,
+      typeId: 1,
       timestamp: 1614659931693,
     },
   ],
@@ -131,8 +131,8 @@ export const getOrders = () => {
 };
 
 export const getTypes = () => {
-  return database.types.map((type) => ({ ...type }))
-}
+  return database.types.map((type) => ({ ...type }));
+};
 
 export const getOrderBuilder = () => {
   return { ...database.orderBuilder };
@@ -159,11 +159,11 @@ export const setType = (id) => {
 };
 
 export const addCustomOrder = () => {
-  const newOrder = {...database.orderBuilder};
-  const newId = database.customOrders[database.customOrders.length -1].id + 1
+  const newOrder = { ...database.orderBuilder };
+  const newId = database.customOrders[database.customOrders.length - 1].id + 1;
   newOrder.id = newId;
   newOrder.timestamp = Date.now();
   database.customOrders.push(newOrder);
   database.orderBuilder = {};
   document.dispatchEvent(new CustomEvent("stateChanged"));
-}
+};

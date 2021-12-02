@@ -4,6 +4,7 @@ import {
   getTechnologies,
   getWheels,
   getOrders,
+  getTypes,
   getOrderBuilder,
   addCustomOrder,
 } from "./database.js";
@@ -25,15 +26,17 @@ const buildCustomOrder = (order) => {
   const interiors = getInteriors();
   const techs = getTechnologies();
   const wheels = getWheels();
+  const types = getTypes();
 
-  const orderedPaint = paints.find((paint) => order.id === paint.id);
+  const orderedPaint = paints.find((paint) => paint.id === order.paintId);
   const orderedInterior = interiors.find(
-    (interior) => order.id === interior.id
+    (interior) => interior.id === order.interiorId
   );
-  const orderedTech = techs.find((tech) => order.id === tech.id);
-  const orderedWheel = wheels.find((wheel) => order.id === wheel.id);
+  const orderedTech = techs.find((tech) => tech.id === order.techId);
+  const orderedWheel = wheels.find((wheel) => wheel.id === order.wheelId);
+  const orderedType = types.find((type) => type.id === order.typeId);
 
-  const totalCost = orderedPaint.price + orderedInterior.price + orderedTech.price + orderedWheel.price;
+  const totalCost = (orderedPaint.price + orderedInterior.price + orderedTech.price + orderedWheel.price) * orderedType.priceMult;
   const costString = totalCost.toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
@@ -47,7 +50,7 @@ const buildCustomOrder = (order) => {
 document.addEventListener("click", (event) => {
   if (event.target.id === "orderButton") {
     const builtOrder = getOrderBuilder();
-    if (Object.keys(builtOrder).length >= 4) {
+    if (Object.keys(builtOrder).length >= 5) {
       addCustomOrder();
     }
   }
